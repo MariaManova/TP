@@ -1,0 +1,45 @@
+﻿@model IEnumerable<BusCompany.Models.Ticket>
+	@{
+		Layout = "~/Views/Shared/_Layout.cshtml";
+	}
+	<html>
+	<head>
+		<meta name="viewport" content="width=device-width" />
+		<title>Автобусное предприятие</title>
+	</head>
+	<body>
+		<div>
+			<h3>Список заказов</h3>
+			<table>
+				<tr>
+					<td><p>Клиент Имя</p></td>
+					<td><p>Клиент Фамилия</p></td>
+					<td><p>Номер маршрута</p></td>
+					<td><p>Начальный пункт</p></td>
+					<td><p>Конечный пункт</p></td>
+					<td><p>Цена</p></td>
+					
+					<td><p>Статус</p></td>
+					<td><p>Маршрут</p></td>
+					<td><p></p></td>
+					<td><p></p></td>
+				</tr>
+				@foreach (var m in Model)
+				{
+					<tr>
+						<td><p>@Html.DisplayFor(model => m.clientName)</p></td>
+						<td><p>@Html.DisplayFor(model => m.clientSurname)</p></td>
+						
+						<td><p>@Html.DisplayFor(model => m.begin)</p></td>
+						<td><p>@Html.DisplayFor(model => m.end)</p></td>
+						<td><p>@Html.DisplayFor(model => m.pay)</p></td>
+						
+
+						<td><p><a href="/Tickets/TicketDelete/@m.id">Удалить</a></p></td>
+
+					</tr>
+				}
+			</table>
+		</div>
+	</body>
+</html>

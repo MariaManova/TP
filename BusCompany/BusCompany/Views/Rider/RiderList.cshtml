@@ -1,0 +1,43 @@
+﻿
+@model IEnumerable<BusCompany.Models.Rider>
+@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Водители</title>
+</head>
+<body>
+	<div>
+		
+		<table>
+			<tr>
+				<td><p>Имя</p></td>
+				<td><p>Фамилия</p></td>
+				<td><p>Отчество</p></td>
+				<td><p>Адресс</p></td>
+				<td><p>Телефон</p></td>
+				<td><p>Номер маршрута</p></td>
+				<td><p></p></td>
+				<td><p></p></td>
+			</tr>
+			@foreach (var m in Model)
+			{
+				<tr>
+					<td><p>@Html.DisplayFor(model => m.name)</p></td>
+					<td><p>@Html.DisplayFor(model => m.surname)</p></td>
+					<td><p>@Html.DisplayFor(model => m.patronymic)</p></td>
+					<td><p>@Html.DisplayFor(model => m.adress)</p></td>
+					<td><p>@Html.DisplayFor(model => m.phone)</p></td>
+					<td><p>@Html.DisplayFor(model => m.atsnumber)</p></td>
+					<td><p><a href="/Rider/RiderDelete/@m.id">Удалить</a></p></td>
+				</tr>
+			}
+		</table>
+	</div>
+</body>
+</html>

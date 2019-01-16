@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model BusCompany.Models.ATS
+
+<h2>Удаление автобуса</h2>
+<dl>
+    <dt>Марка: @Html.DisplayFor(m => m.marka)</dt>
+    <dt>Модель: @Html.DisplayFor(m => m.number)</dt>
+    <dt>Грузоподъемность, кг: @Html.DisplayFor(m => m.waynumber)</dt>
+    <dt>Расход, л/100км: @Html.DisplayFor(m => m.fuel)</dt>
+
+</dl>
+ 
+@using (Html.BeginForm())
+{
+	<input type="submit" value="Удалить" />
+}

@@ -1,0 +1,21 @@
+﻿@model BusCompany.Models.Ticket
+@{
+    ViewBag.Title = "Оформление заявки на автобус";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Информация о билете</h2>
+@using (Html.BeginForm("TicketAdd", "Ticket", FormMethod.Post))
+{
+    <dl>
+        <input type="hidden" value="@ViewBag.Ways.id" name="wayID" />
+        <input type="hidden" value="@ViewBag.User.Email" name="clientEmail" />
+
+        <dt>Клиент: @ViewBag.User.surname @ViewBag.User.name @ViewBag.User.patronymic</dt>
+        <dt>Маршрут: @ViewBag.Ways.begin @ViewBag.Ways.end @ViewBag.Ways.pay</dt>
+  
+        
+        
+    </dl>
+
+    <input type="submit" value="Отправить" />
+}

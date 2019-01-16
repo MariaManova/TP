@@ -1,0 +1,39 @@
+﻿@model BusCompany.Models.ATS
+
+@{
+    ViewBag.Title = "Редактировать автобус";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Автобус №@Model.id</h2>
+@Html.BeginForm("ATSEdit", "ATS", FormMethod.Post)
+{
+<fieldset>
+    @Html.HiddenFor(m => m.id)
+    <p>
+        @Html.LabelFor(m => m.marka, "Марка")
+        <br />
+        @Html.EditorFor(m => m.marka)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.number, "Модель")
+        <br />
+        @Html.EditorFor(m => m.number)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.waynumber, "Грузоподъемность, кг")
+        <br />
+        @Html.EditorFor(m => m.waynumber)
+    </p>
+
+    <p>
+        @Html.LabelFor(m => m.fuel, "Расход топлива л/100 км")
+        <br />
+        @Html.EditorFor(m => m.fuel)
+    </p>
+
+
+    <p><input type="submit" value="Отправить" /></p>
+
+</fieldset>
+}

@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "WayillAdd";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model BusCompany.Models.Way
+
+<h2>Оформление путевого листа</h2>
+@using (Html.BeginForm("WaybillAdd", "Waybill", FormMethod.Post))
+{
+    <input type="hidden" value="@ViewBag.Request.numberway" name="numberway" />
+    <input type="hidden" value="@ViewBag.Request.departureDate" name="departureDate" />
+    <input type="hidden" value="@ViewBag.Request.begin" name="begin" />
+    <input type="hidden" value="@ViewBag.Request.pay" name="pay" />
+
+    <dt>Дата оформления: @ViewBag.Request.numberway</dt>
+    <dt>Маршрут: @ViewBag.Request.pay</dt>
+    <dt>Дата выезда: @ViewBag.Request.departureDate</dt>
+    <dt>Дата возвращения: @ViewBag.Request.begin)</dt>
+
+
+    <input type="submit" value="Отправить" />
+}
+

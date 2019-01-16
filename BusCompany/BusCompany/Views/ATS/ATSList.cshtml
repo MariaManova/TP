@@ -1,0 +1,41 @@
+﻿
+@model IEnumerable<BusCompany.Models.ATS>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Автобусное предприятие</title>
+</head>
+<body>
+    <div>
+        <h3>Список автобусов</h3>
+        <td><p><a href="/ATS/ATSAdd">Добавить автобус</a></p></td>
+        <table>
+            <tr>
+                <td><p>Марка</p></td>
+                <td><p>Модель</p></td>
+                <td><p>Грузоподъемность</p></td>
+                <td><p>Расход</p></td>
+                <td><p></p></td>
+                <td><p></p></td>
+            </tr>
+            @foreach (var m in Model)
+            {
+                <tr>
+                    <td><p>@Html.DisplayFor(model => m.marka)</p></td>
+                    <td><p>@Html.DisplayFor(model => m.number)</p></td>
+                    <td><p>@Html.DisplayFor(model => m.waynumber)</p></td>
+                    <td><p>@Html.DisplayFor(model => m.fuel)</p></td>
+                    <td><p><a href="/ATS/ATSEdit/@m.id">Редактировать</a></p></td>
+                    <td><p><a href="/ATS/ATSDelete/@m.id">Удалить</a></p></td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

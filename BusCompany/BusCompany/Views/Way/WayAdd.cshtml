@@ -1,0 +1,26 @@
+﻿
+@{
+	ViewBag.Title = "WayAdd";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model BusCompany.Models.Way
+<h2>Оформление путевого листа</h2>
+@using (Html.BeginForm("WayAdd", "Way", FormMethod.Post))
+{
+	 <input type = "hidden" value = "@ViewBag.Ticket.begin" name = "begin" />
+		<input type="hidden" value="@ViewBag.Ticket.end" name="end" />
+		<input type="hidden" value="@ViewBag.Ticket.time" name="time" />
+		<input type="hidden" value="@ViewBag.Ticket.pay" name="pay" />
+
+		<dt>Начальный пункт: @ViewBag.Ticket.begin</dt>
+		<dt>Конечный пункт: @ViewBag.Ticket.end</dt>
+		<dt>Время в пути: @ViewBag.Ticket.time</dt>
+		<dt>Цена: @ViewBag.Ticket.pay)</dt>
+
+
+
+		
+
+
+	<input type="submit" value="Отправить" />
+}

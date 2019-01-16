@@ -1,0 +1,37 @@
+﻿@model IEnumerable<BusCompany.Models.Way>
+@{
+	ViewBag.Title = "WayList";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Автобусное предприятие</title>
+</head>
+<body>
+	<div>
+		<h3>Список путевых листов</h3>
+		<table>
+			<tr>
+				<td><p>Начальный пункт</p></td>
+				<td><p>Конечный пункт</p></td>
+				<td><p>Время в пути</p></td>
+				<td><p>Цена</p></td>
+			</tr>
+			@foreach (var m in Model)
+			{
+				<tr>
+					<td><p>@Html.DisplayFor(model => m.begin)</p></td>
+					<td><p>@Html.DisplayFor(model => m.end)</p></td>
+					<td><p>@Html.DisplayFor(model => m.time)</p></td>
+					<td><p>@Html.DisplayFor(model => m.pay)</p></td>
+
+					<td><p><a href="/Ticket/TicketAdd/@m.id">Оформить билет</a></p></td>
+				</tr>
+			}
+		</table>
+	</div>
+</body>
+</html>
+
